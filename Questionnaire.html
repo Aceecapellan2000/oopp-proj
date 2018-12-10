@@ -27,7 +27,7 @@
                     <script src="docs/assets/js/application.js"></script>
     
     </head>
-    <body style="background-image:url('3.jpg'); background-attachment: fixed">
+    <body >
           <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
@@ -174,36 +174,16 @@
 
                        <div class="form-group">
                          <h3 style="padding:20px;border-left:5px solid gold">Please rate our questionnaire</h3>
-                          <div class="radio">
-                            <label>
-                                 <input type="radio" name="q7" id="optionsRadios1" value="radio1"> 5</label>
+                         <div class="rating" style="font-size:50px;margin:30px">
+                          <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
                           </div>
-                         <div class="radio">
-                          <label>
-                           <input type="radio" name="q7" id="optionsRadios2" value="radio2">4</label>
-                         </div>
-                         <div class="radio">
-                          <label>
-                           <input type="radio" name="q7" id="optionsRadios3" value="radio3">3</label>
-                         </div>
-                         <div class="radio">
-                          <label>
-                           <input type="radio" name="q7" id="optionsRadios4" value="radio4">2</label>
-                         </div>
-                         <div class="radio">
-                          <label>
-                           <input type="radio" name="q7" id="optionsRadios5" value="radio5">1</label>
-                         </div>
-                       </div>
-                       <br>
-
 
               
 <!--submit-->
 
 
 
-                        <a type="submit" href='success.html' class="w3-button w3-black w3-round-xlarge"style="background-color:lightgrey;text-decoration:none; font-size:40px;margin:10px">Submit</a>
+                        <a href='success.html' class="btn btn-block btn-lg btn-primary" >Submit</a>
                     </form>
                 </div>
             </div>
@@ -215,7 +195,22 @@
 
 </body>
 </html>
-<style class="cp-pen-styles">.border-box {
+<style class="cp-pen-styles">
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}
+.border-box {
   box-sizing: border-box;
 }
 p{
