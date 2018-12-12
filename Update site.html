@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+    <!doctype html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <meta name="author" content="colorlib.com">
+                    <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
+
+                    <!-- Loading Bootstrap -->
+                    <link href="dist/css/vendor/bootstrap.min.css" rel="stylesheet">
+                
+                    <!-- Loading Flat UI -->
+                    <link href="dist/css/flat-ui.css" rel="stylesheet">
+                    <link href="docs/assets/css/demo.css" rel="stylesheet">
+                
+                    <link rel="shortcut icon" href="dist/favicon.ico">
+                    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+                    <!-- Bootstrap 4 requires Popper.js -->
+                    <script src="https://unpkg.com/popper.js@1.14.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+                    <script src="http://vjs.zencdn.net/6.6.3/video.js"></script>
+                    <script src="dist/scripts/flat-ui.js"></script>
+                    <script src="docs/assets/js/application.js"></script>
+                    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+                    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        
+    </head>
+    <body style="margin: auto;width: 50%;background-color: #272b38; font-color: white;background-image: url('https://www.procopio.com/uploads/cache/Image/Block/id/212/319caaa56c62a62e7cc511047ac2ef8a52b70053.jpg');background-size:cover;background-repeat:no-repeat;background-position: center center;">
+        <h2>Please key in your current data in the form</h2>
+        <h6>Weight: </h6>
+        <div class="plusminus horiz">
+
+
+                <button class="btn btn-block btn-lg btn-inverse" style="width:35px;height: 40px;display:inline;font-size: 20px;padding:5px 10px">+</button>
+                <input type='number'name="productQty" value="1" min="1" max="100" step="0.1" style="display:inline;width:70px"><p style="display:inline">KG</p>
+                <button class="btn btn-block btn-lg btn-inverse" style="width:35px;height: 40px;display:inline;font-size: 20px;padding:5px 10px">+</button> 
+
+
+        </div>
+
+
+         <h6>Height: </h6>
+         <div class="plusminus horiz">
+
+
+          <button class="btn btn-block btn-lg btn-inverse" style="width:35px;height: 40px;display:inline;font-size: 20px;padding:5px 10px">+</button>
+          <input name="productQty" value="1" min="1" max="100" step="1" style="display:inline;width:80px"><p style="display:inline">CM</p>
+          <button class="btn btn-block btn-lg btn-inverse" style="width:35px;height: 40px;display:inline;font-size: 20px;padding:5px 10px">+</button>
+          
+          
+  </div>       
+         <h6>Date: </h6><input type="text" id="datepicker">
+         <h6>Sleeping hours: </h6>
+          <select class="form-control select select-primary" data-toggle="select" style="width:60px">
+            <option value="0">4</option>
+            <option value="1">5</option>
+            <option value="2">6</option>
+            <option value="3">7</option>
+            <option value="4" selected>8</option>
+            <option value="5">9</option>
+            <option value="6">10</option>
+            <option value="7">11</option>
+            <option value="8">12</option>
+          </select>
+            <p style="display:inline">hours</p> 
+            <select class="form-control select select-primary" data-toggle="select" style="max-width:50%">
+                <option value="0">00</option>
+                <option value="1">15</option>
+                <option value="2">30</option>
+                <option value="3">45</option>
+              </select>
+              <p style="display:inline">minutes</p> 
+         
+         
+        </body>
+        <script>
+(function ($) {
+  $.fn.numberPicker = function() {
+    var dis = 'disabled';
+    return this.each(function() {
+      var picker = $(this),
+          p = picker.find('button:last-child'),
+          m = picker.find('button:first-child'),
+          input = picker.find('input'),                 
+          min = parseInt(input.attr('min'), 10),
+          max = parseInt(input.attr('max'), 10),
+          inputFunc = function(picker) {
+            var i = parseInt(input.val(), 10);
+            if ( (i <= min) || (!i) ) {
+              input.val(min);
+              p.prop(dis, false);
+              m.prop(dis, true);
+            } else if (i >= max) {
+              input.val(max);
+              p.prop(dis, true); 
+              m.prop(dis, false);
+            } else {
+              p.prop(dis, false);
+              m.prop(dis, false);
+            }
+          },
+          changeFunc = function(picker, qty) {
+            var q = parseInt(qty, 10),
+                i = parseInt(input.val(), 10);
+            if ((i < max && (q > 0)) || (i > min && !(q > 0))) {
+              input.val(i + q);
+              inputFunc(picker);
+            }
+          };
+      m.on('click', function(){changeFunc(picker,-1);});
+      p.on('click', function(){changeFunc(picker,1);});
+      input.on('change', function(){inputFunc(picker);});
+      inputFunc(picker); //init
+    });
+  };
+}(jQuery));
+
+
+$(document).on('ready', function(){
+  
+  $('.plusminus').numberPicker();
+  
+  
+});
+
+
+$(document).on('ready', function(){
+
+  $('input[type="number"]').numberPicker(); //turn all input
+  $('<input type="number" name="qty" value="1" min="10" max="15" pattern="[0-9]" class="horiz">').numberPicker().appendTo('#weight');
+
+});
+
+        $( function() {
+    $( "#datepicker" ).datepicker();
+  } );</script>
+  
+  </html>
