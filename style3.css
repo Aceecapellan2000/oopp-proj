@@ -1,0 +1,198 @@
+html, body {
+            margin: 0;
+            height: 100%;
+            overflow-x: hidden;
+        }
+        body {
+            background-color: 	#FAFAFF;
+            color : #666666;
+
+        }
+
+        .loading-gif-container {
+            z-index: 1;
+        }
+
+        #bodyContainer {
+            z-index: -1;
+        }
+
+        table.hp-summary {
+            border-collapse:collapse;
+            /*word-break:break-word;*/
+        }
+
+        span.blue-arrow-right > img{
+            width:auto;
+            height: 28px;
+            content:url('image/xhdpi_arrow_blue_right.png');
+        }
+
+        span.red-arrow-down > img{
+            width:auto;
+            height: 28px;
+            content:url('image/xhdpi_arrow_red_down.png');
+        }
+
+        .margin-8 {
+            margin: 8px;
+        }
+
+        #hp-data-table {
+            z-index:0;
+        }
+
+
+        table.hp-summary tr.primary-row {
+            /*border: 1px solid #EAEAFA ;*/
+        }
+
+         table.hp-summary td:first-child span {
+            display: table-cell;
+        }
+
+        tr#rwRedeemData > td > span,
+        tr#rwExpiringData > td > span {
+            display:inline;
+        }
+
+        table.hp-summary tr.primary-row > td {
+            /*border-top: 1px solid #EAEAFA;
+            border-bottom: 1px solid #EAEAFA;
+            background-color: #FFFFFF;*/
+            vertical-align: middle;
+        }
+
+        table.hp-summary tr.primary-row  td:first-child {
+            /*color : #EB174E;*/
+
+        }
+
+        table.hp-summary tr.secondary-row {
+            /*background-color: #FFFFFF;*/
+        }
+
+        #earnedDetail {
+            overflow-y:auto;
+        }
+
+        .with-border {
+            /*border: 1px solid #EAEAFA ;*/
+        }
+
+        table.hp-summary tr.secondary-row table.first-breakdown td:first-child,
+        table.hp-summary tr.secondary-row table.second-breakdown td:first-child {
+            /*color :#30B6CE;*/
+
+        }
+
+        table.hp-summary tr.secondary-row table.first-breakdown td:nth-child(2),
+        table.hp-summary tr.secondary-row table.second-breakdown td:nth-child(2) {
+            /*color : #666666;*/
+        }
+
+
+        table.first-breakdown > tbody > tr.first-breakdown-container > td {
+            padding:8px;
+        }
+
+        table.first-breakdown > tbody > tr > td td{
+            padding: 8px;
+        }
+
+        table.second-breakdown tr {
+            /*border-top: 1px solid #EAEAFA ;*/
+        }
+
+        table.hp-summary tr > td {
+            border-top: none;
+            border-bottom: none;
+            vertical-align:middle;
+        }
+
+        #rwExpiringData table {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        #rwExpiringData tbody > tr > td {
+            padding-top: 5px;
+        }
+
+        .table.hp-summary > tbody > tr:not(.primary-row) {
+            border-bottom: 1px solid #EAEAFA;
+        }
+
+        .table.hp-summary > tbody > tr:last-child {
+            border-bottom: none;
+        }
+
+        .button-container {
+            /*position:absolute;
+            bottom:55px;*/
+        }
+
+        .button-container button,
+        .button-container button:hover {
+            background-color: #30B6CE;
+            color: #EAEAFA;
+            font-size:80%;
+            white-space: normal;
+            margin-top:15px;
+        }
+
+        @-webkit-keyframes rotate {
+          from {
+            -webkit-transform: rotate(0deg);
+          }
+          to {
+            -webkit-transform: rotate(360deg);
+          }
+        }
+
+        .rotated-90 {
+            -ms-transform: rotate(180deg); /* IE 9 */
+            -webkit-transform: rotate(1800deg); /* Chrome, Safari, Opera */
+            transform: rotate(180deg);
+
+        }
+
+        .rotated-270 {
+            -ms-transform: rotate(270deg); /* IE 9 */
+            -webkit-transform: rotate(270deg); /* Chrome, Safari, Opera */
+            transform: rotate(270deg);
+
+        }
+
+        .loading-gif-container {
+            width: 100px;
+            height:100px;
+            position:fixed;
+            border-radius:8px;
+            display:table;
+            background-color: rgba(128,128,128, 0.2);
+            top:calc(50% - 50px);
+            left:calc(50% - 50px);
+        }
+
+        .loading-gif-container p {
+            display:table-cell;
+            vertical-align:middle;
+            font-size:80%;
+            color:black;
+            text-align:center;
+        }
+
+
+        img.loading-gif {
+            -webkit-animation-name:             rotate;
+            -webkit-animation-duration:         3s;
+            -webkit-animation-iteration-count:  infinite;
+            -webkit-animation-timing-function: linear;
+            content:url('image/loadingSpin.png');
+            position:fixed;
+            width:60px;
+            height:60px;
+            top:calc(50% - 30px);
+            left:calc(50% - 30px);
+        }
