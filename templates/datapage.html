@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 {% block body %}
-    <div> </div>
+    <div>
+    </div>
     <h2> YOUR OVERALL HEALTH </h2>
     <div class="overall-meter">
         <div id="docsChart"></div>
@@ -58,27 +59,27 @@ d3.transition().duration(1000).tween("progress", function () {
 </script>
 	</div>
     <div class="overall">
-        <h4> EXERCISE MORE! </h4>
-        <p> Your BMI is 1.2 points above healthy range. <br>
-        You can improve this by being more active or improving your diet.</p>
+        <h4> {{m}} </h4>
+        <p> {{base}} <br>
+        </p>
     </div>
     <a href="/planpage">
 	<div class="plan">
 	    <p style="font-size: 175%"> P L A N </p>
-		<p> based on your identity as a student: </p>
-		<p> EXERCISE</p>
+		<!--<p> based on your identity as a student: </p>-->
+        <p> EXERCISE</p>
 		<ul>
-		    <li> run 2km a week </li>
+		    <li> {{run}} </li>
 			<li> take the stairs instead of the lift/escalator </li>
 		</ul>
         <p> DIET </p>
         <ul>
-            <li> reduce carbohydrate and fat intake (tip: no fried food!)</li>
+            <li> {{plan}}</li>
             <li> incorporate one more daily serving of fruit </li>
             <li> cut down on soft drinks </li>
         </ul>
         <br>
-		<p> estimated time to reach optimum BMI: 2 months </p>
+		<p> {{eta}} </p>
 	</div>
     </a>
     <div class="side-bar">
@@ -89,7 +90,7 @@ d3.transition().duration(1000).tween("progress", function () {
         explore them here!</p>
         </div>
         </a>
-        <a href="statspage.html">
+        <a href="/statspage">
         <div class="progress">
             <p style="font-size: 175%"> P R O G R E S S </p>
             <p> stats etc. see how you're doing! </p>

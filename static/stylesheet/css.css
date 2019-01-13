@@ -1,5 +1,5 @@
 	body {
-	font-family: "Verdana";
+	font-family: "Verdana", 'Arial';
 	color: white;
 	background-color: #272b38;
 	}
@@ -19,9 +19,16 @@
 	height: 30px;
 	background-color: #3e4459;
 	width: 100%;
-        position: fixed;
-        top: 0;
+    position: fixed;
+    top: 0;
 	}
+
+    .top-bar p {
+        color: #ffffff;
+        margin: 7px;
+        margin-left: 1250px;
+        font-size: 80%;
+    }
 
 	.side-bar {
 	display: inline-block;
@@ -29,14 +36,14 @@
 	}
 
 	.plan {
-	width: 475px;
-	height: 475px;
-	border: solid 1px grey;
-	margin: 80px 0px 0px 270px;
-	text-align: center;
-	display: inline-block;
-	padding-top: 10px;
-	}
+        width: 475px;
+        height: 475px;
+        border: solid 1px grey;
+        margin: 80px 0px 0px 270px;
+        text-align: center;
+        display: inline-block;
+        padding-top: 10px;
+    }
 
 	.inspo, .progress {
 	width: 475px;
@@ -67,7 +74,7 @@
 	line-spacing: 10px;
 	margin: -5px;
 	}
-	.videos,  .blogs, .ebooks {
+	.videos, .blogs, .ebooks {
     width: 80%;
 	margin: auto;
 	margin-top: 50px;
@@ -83,7 +90,7 @@
 	}
 
 	.vid-containers img {
-		width: 240px;
+        width: 240px;
 	height: 145px;
 	}
 
@@ -99,19 +106,19 @@
 	.videos p {
 	align-text: right;
 	}
-
 a
 {
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
 
   transition: color 0.3s ease;
 }
 
 a:hover
 {
-  color: #586ace;
+  color: tomato;
 }
+
 
 #menuToggle
 {

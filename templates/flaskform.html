@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+  <style>
+    body {
+      color: white;
+      background-color: #3e4459;
+      font-family: 'Verdana';
+    }
+
+    form {
+      margin: 45px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+{% from "includes/_formhelpers.html" import render_field %}
+<form method=post>
+  <h3> - Enter info -  </h3>
+  <dl>
+    {{ render_field(form.name) }}
+    <br>
+    {{ render_field(form.age) }}
+    <br>
+    {{ render_field(form.gender) }}
+    <br>
+    {{ render_field(form.height) }}
+    <br>
+    {{ render_field(form.weight) }}
+    <br>
+    {{ render_field(form.diet) }}
+  </dl>
+  <p><input type=submit value= Register>
+</form>
+</body>
+</html>
