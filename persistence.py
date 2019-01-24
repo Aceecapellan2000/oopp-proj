@@ -15,11 +15,9 @@ class Points:
     def get_loginpoints(self):
         self.login_points += 150
 
-    def points_summary(self, member_points):
-        self.member_points = member_points
+    def points_summary(self):
+        self.points_summary = self.login_points + self.member_points
+        return self.points_summary
 
     def voucher(self):
         self.member_points -= 10
-
-
-members = shelve.open('member')
