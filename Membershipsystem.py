@@ -1,49 +1,79 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for, request, session
+from persistence import *
 
-app = Flask(__name__)
+
+application = Flask(__name__)
+application.config.from_mapping(
+    SECRET_KEY = 'xyz'
+)
 
 
-@app.route('/')
-@app.route('/mainpage')
+@application.route('/', methods=['GET', 'POST'])
+@application.route('/login', methods=['GET', 'POST'])
+def login():
+    error = None
+    if request.method == 'POST':
+        username = request.form['username']
+        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+            error = 'invalid credentials, please try again'
+        else:
+            session['username'] = username
+            add_login_points(username)
+            return redirect(url_for('mainpage'))
+    return render_template('login.html', error=error)
+
+
+@application.route('/mainpage')
 def mainpage():
-    return render_template('index.html')
+    point = get_member(session['username'])
+    return render_template('index.html', point=point)
 
 
-@app.route('/home')
+@application.route('/home')
 def home():
     return render_template('index2.html')
 
 
-@app.route('/summary')
+@application.route('/summary')
 def summary():
     return render_template('index3.html')
 
 
-@app.route('/voucher')
+@application.route('/voucher')
 def voucher():
     return render_template('index4.html')
 
 
-@app.route('/aches')
+@application.route('/aches')
 def aches():
     return render_template('index6.html')
 
 
-@app.route('/article')
+@application.route('/article')
 def article():
+    add_member_points(session['username'])
     return render_template('index5.html')
 
 
-@app.route('/diabetes')
+@application.route('/diabetes')
 def diabetes():
     return render_template('index7.html')
 
 
-@app.route('/stigma')
+@application.route('/stigma')
 def stigma():
+    add_member_points(session['username'])
     return render_template('index8.html')
 
 
+@application.route('/reset')
+def reset():
+    members.clear()
+    member = Points('admin', 100, 1, 200, 300)
+
+    add_member(member)
+    return 'Add admin member'
+
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    application.run(debug=True)
