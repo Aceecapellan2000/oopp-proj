@@ -31,12 +31,8 @@ def mainpage():
 
 @application.route('/home')
 def home():
-    return render_template('index2.html')
-
-
-@application.route('/summary')
-def summary():
-    return render_template('index3.html')
+    point = get_member(session['username'])
+    return render_template('index2.html', point=point)
 
 
 @application.route('/voucher')
@@ -62,8 +58,13 @@ def diabetes():
 
 @application.route('/stigma')
 def stigma():
-    add_member_points(session['username'])
     return render_template('index8.html')
+
+
+@application.route('/apps')
+def apps():
+    add_member_points(session['username'])
+    return render_template('apps.html')
 
 
 @application.route('/reset')
