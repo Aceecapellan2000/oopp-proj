@@ -10,19 +10,12 @@
 <h3>Earn Healthpoints to enjoy rewards of your choice. The more Healthpoints you earn, the more rewards you gain!</h3><br>
 
 <h3>Healthpoints earned will be updated in your account the following day.</h3><br>
-<h3>Please view applicable expiry date on the Healthpoints summary page.</h3><br>
-
-<a href="summary" class="button">View Healthpoints and Redeem</a><br>
-
 
 <div class="btn-group">
   <a class="button" href="mainpage">Activity</a>
   <a class="button" href="home">History</a>
   <a class="button" href="voucher">Redeem Vouchers</a>
 </div>
-
-
-<h2 style="clear:both"><br>Summary for december 2018:<br> 150 Points</h2>
 
 <br>
 
@@ -33,6 +26,7 @@
 
 <div class="btn-group">
   <a class="button" href="article">Articles</a>
+    <a class="button" href="apps">Apps</a>
 </div>
 
 <h2 style="clear:both">ACTIVITY OF THE MONTH:</h2><br>
@@ -49,7 +43,20 @@
                                                 <img src="https://www.healthhub.sg/membership/healthpoints?&amp;ReturnUrl=https://www.healthhub.sg/membership/healthpoints" style="display:none;" alt="HealthHub" width="20">
                                                 Login</h3>
                                         </td>
-                                        <td><strong class="title-add">150 points&nbsp;<span class="fa fa-heart"></span></strong></td>
+                                        <td><strong class="title-add">{{ point.login_points }}&nbsp;<span class="fa fa-heart"></span></strong></td>
+                                    </tr>
+                                </tbody></table>
+                                <table>
+
+                                    <tbody><tr>
+                                        <td><span class="date">21-Jan</span></td>
+                                        <td class="col-add"></td>
+                                        <td class="col-main">
+                                            <h3>
+                                                <img src="https://www.healthhub.sg/membership/healthpoints?&amp;ReturnUrl=https://www.healthhub.sg/membership/healthpoints" style="display:none;" alt="HealthHub" width="20">
+                                                Member Participation</h3>
+                                        </td>
+                                        <td><strong class="title-add">{{ point.member_points }} points&nbsp;<span class="fa fa-heart"></span></strong></td>
                                     </tr>
                                 </tbody></table>
 </div>
