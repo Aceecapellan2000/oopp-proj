@@ -21,3 +21,29 @@ class Points:
 
     def voucher(self):
         self.member_points -= 10
+
+members = shelve.open('member')
+
+
+def add_member(member):
+    members[member.name] = member
+
+
+def add_login_points(name):
+    if name in members:
+        m = members[name]
+        m.login_points += 100
+        members[name] = m
+
+
+def add_member_points(name):
+    if name in members:
+        m = members[name]
+        m.member_points += 200
+        members[name] = m
+
+
+def get_member(name):
+    if name in members:
+        return members.get(name)
+    return None
