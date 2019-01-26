@@ -22,6 +22,7 @@ class Points:
     def voucher(self):
         self.member_points -= 10
 
+
 members = shelve.open('member')
 
 
@@ -40,6 +41,13 @@ def add_member_points(name):
     if name in members:
         m = members[name]
         m.member_points += 200
+        members[name] = m
+
+
+def voucher_redemption(name):
+    if name in members:
+        m = members[name]
+        m.member_points -= 100
         members[name] = m
 
 
