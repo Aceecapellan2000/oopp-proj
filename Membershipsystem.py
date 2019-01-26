@@ -37,6 +37,7 @@ def home():
 
 @application.route('/voucher')
 def voucher():
+    voucher_redemption(session['username'])
     return render_template('index4.html')
 
 
