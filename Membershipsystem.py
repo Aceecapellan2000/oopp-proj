@@ -26,40 +26,40 @@ def login():
 @application.route('/mainpage')
 def mainpage():
     point = get_member(session['username'])
-    return render_template('index.html', point=point)
+    return render_template('home.html', point=point)
 
 
 @application.route('/home')
 def home():
     point = get_member(session['username'])
-    return render_template('index2.html', point=point)
+    return render_template('history.html', point=point)
 
 
 @application.route('/voucher')
 def voucher():
     voucher_redemption(session['username'])
-    return render_template('index4.html')
+    return render_template('voucher.html')
 
 
 @application.route('/aches')
 def aches():
-    return render_template('index6.html')
+    return render_template('aches.html')
 
 
 @application.route('/article')
 def article():
     add_member_points(session['username'])
-    return render_template('index5.html')
+    return render_template('articles.html')
 
 
 @application.route('/diabetes')
 def diabetes():
-    return render_template('index7.html')
+    return render_template('diabetes.html')
 
 
 @application.route('/stigma')
 def stigma():
-    return render_template('index8.html')
+    return render_template('stigma.html')
 
 
 @application.route('/apps')
