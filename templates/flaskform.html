@@ -8,6 +8,8 @@
       color: white;
       background-color: #3e4459;
       font-family: 'Verdana';
+      margin: auto;
+      text-align: center;
     }
 
     form {
@@ -17,9 +19,9 @@
   </style>
 </head>
 <body>
+  <h3 style="margin-top: 30px"> GET STARTED! </h3>
 {% from "includes/_formhelpers.html" import render_field %}
 <form method=post>
-  <h3> - Enter info -  </h3>
   <dl>
     {{ render_field(form.name) }}
     <br>
@@ -34,6 +36,14 @@
     {{ render_field(form.diet) }}
   </dl>
   <p><input type=submit value= Register>
+</form>
+  <form method=post>
+  <dl>
+    {{ render_field(login.username) }}
+    <br>
+    {{ render_field(login.password) }}
+  </dl>
+  <p><input type=submit value= Login></p>
 </form>
 </body>
 </html>
