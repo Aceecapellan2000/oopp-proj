@@ -18,7 +18,7 @@ table {height:417px; border:7px solid #71BC78; background-color:#272B38;}
 
 <table cellspacing="10" cellpadding="10" style="height:90px; width:40%; border-top-left-radius:40px; border-top-right-radius:40px; margin-right:10px;">
 <tr>
-<td><span id="exg" style="font-size:200%; float:center">LOGIN</span></td>
+<td><span id="exg" style="font-size:200%; float:center">SIGN UP</span></td>
 </tr>
 </table>
 
@@ -27,14 +27,22 @@ table {height:417px; border:7px solid #71BC78; background-color:#272B38;}
 <table cellspacing="10" cellpadding="10" style="width:40%;">
 <tbody>
 <tr>
-<td><span id="exg">Login</span></td>
+<td><span id="exg">Register</span></td>
 </tr>
 <tr>
-<td width="114">Username or Email</td>
+<td width="114">Enter Username</td>
+<td><input type="text" name="name_" size="20"  maxlength="100" value="" required></td>
+</tr>
+<tr>
+<td width="114">Enter Email</td>
 <td><input type="text" name="name_" size="20"  maxlength="100" value="" required></td>
 </tr>
 <tr>
 <td width="114">Password</td>
+<td><input type="email" name="password_" size="20" maxlength="50" value="" required></td>
+</tr>
+<tr>
+<td width="114">Re-Enter Password</td>
 <td><input type="email" name="password_" size="20" maxlength="50" value="" required></td>
 </tr>
 <tr></tr>
@@ -46,9 +54,6 @@ table {height:417px; border:7px solid #71BC78; background-color:#272B38;}
 
 <table cellspacing="10" cellpadding="10" style="height:90px; width:40%; border-bottom-right-radius:40px; border-bottom-left-radius:40px; margin-right:10px;">
 <tbody>
-<tr>
-<td><input type="button" style="background-color:#3E4459; color:white; border-radius:50px; float:right;" value="Sign In" onclick="if (sessionStorage.clickcount){sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;} else {sessionStorage.clickcount = 1;} document.getElementById('comments').innerHTML = 'You have clicked the button' + sessionStorage.clickcount + 'time(s) in this session';"></td>
-</tr>
 <tr>
 <td><input type="button" style="background-color:#3E4459; color:white; border-radius:50px; float:right;" value="Sign Up" onclick="if (sessionStorage.clickcount){sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;} else {sessionStorage.clickcount = 1;} document.getElementById('comments').innerHTML = 'You have clicked the button' + sessionStorage.clickcount + 'time(s) in this session';"></td>
 </tr>
