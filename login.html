@@ -1,63 +1,23 @@
-<!DOCTYPE html>
 <html>
-<head>
-<title>Project Thing</title>
-<link href="https://fonts.googleapis.com/css?family=Chela+One" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Poor+Story" rel="stylesheet">
-<style>
-body {font-family:Poor Story, cursive; background-color:#272B38; color:#FFFFFF; background-image:url(Pills.jpg);}
-table {height:417px; border:7px solid #71BC78; background-color:#272B38;}
-#exg {font-weight:bold}
-.somme {display:flex;}
-</style>
-</head>
-<body>
-
-<br>
-
-<table cellspacing="10" cellpadding="10" style="height:90px; width:40%; border-top-left-radius:40px; border-top-right-radius:40px; margin-right:10px;">
-<tr>
-<td><span id="exg" style="font-size:200%; float:center">LOGIN</span></td>
-</tr>
-</table>
-
-<br>
-
-<table cellspacing="10" cellpadding="10" style="width:40%;">
-<tbody>
-<tr>
-<td><span id="exg">Login</span></td>
-</tr>
-<tr>
-<td width="114">Username or Email</td>
-<td><input type="text" name="name_" size="20"  maxlength="100" value="" required></td>
-</tr>
-<tr>
-<td width="114">Password</td>
-<td><input type="email" name="password_" size="20" maxlength="50" value="" required></td>
-</tr>
-<tr></tr>
-<tr></tr>
-</tbody>
-</table>
-
-<br>
-
-<table cellspacing="10" cellpadding="10" style="height:90px; width:40%; border-bottom-right-radius:40px; border-bottom-left-radius:40px; margin-right:10px;">
-<tbody>
-<tr>
-<td><input type="button" style="background-color:#3E4459; color:white; border-radius:50px; float:right;" value="Sign In" onclick="if (sessionStorage.clickcount){sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;} else {sessionStorage.clickcount = 1;} document.getElementById('comments').innerHTML = 'You have clicked the button' + sessionStorage.clickcount + 'time(s) in this session';"></td>
-</tr>
-<tr>
-<td><input type="button" style="background-color:#3E4459; color:white; border-radius:50px; float:right;" value="Sign Up" onclick="if (sessionStorage.clickcount){sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;} else {sessionStorage.clickcount = 1;} document.getElementById('comments').innerHTML = 'You have clicked the button' + sessionStorage.clickcount + 'time(s) in this session';"></td>
-</tr>
-</tbody>
-</table>
-
-<p style="font-size:75%; color:white;">You have acctpted to the thingy and privacy stuff and thus you have given permission to do thing with private thing data and more data stuff and the new EU agreement thingy yada yada yada yada yada.</p>
-
-<br>
-
-</body>
+  <head>
+    <title>Flask Intro - login page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Please login</h1>
+      <br>
+      <form action="" method="post">
+        <input type="text" placeholder="Username" name="username" value="{{
+          request.form.username }}">
+         <input type="password" placeholder="Password" name="password" value="{{
+          request.form.password }}">
+        <input class="btn btn-default" type="submit" value="Login">
+      </form>
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </div>
+  </body>
 </html>
